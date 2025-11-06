@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
+import icon from "./assets/icon.png"; // adjust path if needed
 
 const translations = {
   en: {
@@ -172,103 +173,6 @@ function usePreferredLanguage(defaultLang = "fr") {
   return [lang, setLang];
 }
 
-const OwlDefs = () => (
-  <svg width="0" height="0" style={{ position: "absolute" }}>
-    <defs>
-      <symbol id="owl-grand-duc" viewBox="0 0 260 260">
-        <g fill="none">
-          <path
-            d="M130 30c-25.5 0-46 20.5-46 46v20.5c-25.4 9-42.3 32.3-42.3 60.5 0 55.4 42.8 124 86.5 144.2a16 16 0 0 0 13.6 0c43.7-20.3 86.5-88.8 86.5-144.2 0-28.2-16.9-51.5-42.3-60.5V76c0-25.5-20.5-46-46-46z"
-            fill="#ffffff"
-            stroke="#16264b"
-            strokeWidth="6"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M102 46l11-18 17 14 17-14 11 18 15-12 8 28h-102l8-28z"
-            fill="#e5e8f0"
-            stroke="#16264b"
-            strokeWidth="4"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M90 112c0-22.1 18.4-40 40-40s40 17.9 40 40"
-            stroke="#16264b"
-            strokeWidth="6"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="102"
-            cy="122"
-            r="20"
-            fill="#ffffff"
-            stroke="#16264b"
-            strokeWidth="6"
-          />
-          <circle
-            cx="158"
-            cy="122"
-            r="20"
-            fill="#ffffff"
-            stroke="#16264b"
-            strokeWidth="6"
-          />
-          <circle cx="102" cy="122" r="9" fill="#16264b" />
-          <circle cx="158" cy="122" r="9" fill="#16264b" />
-          <circle cx="99" cy="118" r="3" fill="#ffffff" />
-          <circle cx="155" cy="118" r="3" fill="#ffffff" />
-          <path
-            d="M118 140l12 18 12-18"
-            fill="#e5e8f0"
-            stroke="#16264b"
-            strokeWidth="4"
-            strokeLinejoin="round"
-          />
-          <g fill="#e5e8f0" opacity="0.85">
-            <rect x="100" y="164" width="22" height="10" rx="2" />
-            <rect x="138" y="164" width="22" height="10" rx="2" />
-            <rect x="118" y="182" width="22" height="10" rx="2" />
-            <rect x="156" y="182" width="22" height="10" rx="2" />
-            <rect x="100" y="200" width="22" height="10" rx="2" />
-            <rect x="138" y="200" width="22" height="10" rx="2" />
-          </g>
-          <path
-            d="M66 150c6 40 34 94 72 118"
-            stroke="#16264b"
-            strokeWidth="5"
-            strokeLinecap="round"
-            strokeDasharray="10 12"
-            opacity="0.9"
-          />
-          <path
-            d="M194 150c-6 40-34 94-72 118"
-            stroke="#16264b"
-            strokeWidth="5"
-            strokeLinecap="round"
-            strokeDasharray="10 12"
-            opacity="0.9"
-          />
-          <path
-            d="M90 228h80"
-            stroke="#16264b"
-            strokeWidth="6"
-            strokeLinecap="round"
-          />
-        </g>
-      </symbol>
-
-      <pattern
-        id="owl-footer"
-        patternUnits="objectBoundingBox"
-        width="1"
-        height="1"
-      >
-        <use href="#owl-grand-duc" transform="scale(0.004)" opacity="0.18" />
-      </pattern>
-    </defs>
-  </svg>
-);
-
 function App() {
   const [lang, setLang] = usePreferredLanguage("fr");
 
@@ -279,7 +183,6 @@ function App() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Keep memoized to avoid re-rendering icons unnecessarily (optional but tidy)
   const serviceCards = useMemo(
     () => [
       {
@@ -441,14 +344,15 @@ function App() {
 
   return (
     <>
-      <OwlDefs />
-
       <header>
         <div className="nav-container">
           <a className="brand" href="#top" onClick={handleNavClick("hero")}>
-            <svg width="46" height="46" viewBox="0 0 260 260">
-              <use href="#owl-grand-duc" />
-            </svg>
+            <img
+              src={icon}
+              alt="Maçonnerie Grand-Duc logo"
+              width={46}
+              height={46}
+            />
             Maçonnerie Grand-Duc
           </a>
 
@@ -483,9 +387,11 @@ function App() {
             </div>
 
             <div className="owl-crest">
-              <svg viewBox="0 0 260 260">
-                <use href="#owl-grand-duc" />
-              </svg>
+              <img
+                src={icon}
+                alt="Maçonnerie Grand-Duc crest"
+                style={{ width: 300 }}
+              />
             </div>
           </div>
         </section>
@@ -635,9 +541,7 @@ function App() {
       <footer>
         <div className="footer-inner">
           <div className="footer-brand">
-            <svg viewBox="0 0 260 260">
-              <use href="#owl-grand-duc" />
-            </svg>
+            <img src={icon} alt="Maçonnerie Grand-Duc logo" />
             <div>
               <div className="footer-brand-title">Maçonnerie Grand-Duc</div>
               <div>{t("footer.tagline")}</div>
