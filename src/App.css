@@ -34,7 +34,7 @@ a {
 header {
   position: fixed;
   inset: 0 0 auto 0;
-  background: rgba(22, 38, 75, 0.97);
+  background: var(--white);
   backdrop-filter: blur(6px);
   z-index: 1000;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
@@ -53,7 +53,7 @@ header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--white);
+  color: var(--midnight);
   font-family: var(--heading-font);
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -68,7 +68,7 @@ header {
 }
 
 .nav-links a {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--midnight);
   position: relative;
 }
 
@@ -79,7 +79,7 @@ header {
   bottom: -6px;
   width: 0;
   height: 2px;
-  background: var(--white);
+  background: var(--midnight);
   transition: width 0.3s ease;
 }
 
@@ -94,10 +94,10 @@ main {
 
 .hero {
   position: relative;
-  color: var(--white);
+  color: var(--midnight);
   overflow: hidden;
-  background: linear-gradient(rgba(22, 38, 75, 0.65), rgba(22, 38, 75, 0.65)),
-    url("./assets/bg.png") center/cover no-repeat;
+  background: linear-gradient(rgba(22, 38, 75, 0.1), rgba(22, 38, 75, 0.1)),
+    url("./assets/bg-placeolder.png") center/cover no-repeat;
 }
 
 .hero::before {
@@ -136,7 +136,7 @@ main {
 
 .hero-text p {
   font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.86);
+  color: var(--midnight);
   max-width: 28rem;
   margin-bottom: 2rem;
 }
@@ -148,8 +148,8 @@ main {
 }
 
 .btn-primary {
-  border: 2px solid var(--white);
-  color: var(--white);
+  border: 2px solid var(--midnight);
+  color: var(--midnight);
   padding: 0.85rem 1.85rem;
   border-radius: 999px;
   font-weight: 600;
@@ -161,8 +161,8 @@ main {
 }
 
 .btn-primary:hover {
-  background: var(--white);
-  color: var(--midnight);
+  background: var(--midnight);
+  color: var(--white);
 }
 
 .btn-outline {
@@ -447,9 +447,10 @@ form textarea {
 }
 
 footer {
+  border-top: 1px solid var(--midnight);
   position: relative;
-  background: var(--midnight);
-  color: rgba(255, 255, 255, 0.7);
+  background: var(--white);
+  color: black;
   padding: 3rem 1.5rem;
   overflow: hidden;
 }
@@ -518,15 +519,15 @@ footer::before {
   place-items: center;
   font-size: 0.8rem;
   transition: background 0.3s ease, color 0.3s ease;
-  color: rgba(255, 255, 255, 0.65);
+  color: black;
   background: transparent;
   cursor: pointer;
 }
 
 .language-toggle-button:hover,
 .language-toggle-button.active {
-  background: var(--white);
-  color: var(--midnight);
+  background: var(--midnight);
+  color: var(--white);
 }
 
 .contact-actions {
