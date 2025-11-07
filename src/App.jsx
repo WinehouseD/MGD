@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
-import icon from "./assets/logo.png";
+import icon from "./assets/logo.PNG";
 
 const translations = {
   en: {
