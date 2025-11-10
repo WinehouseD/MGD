@@ -339,7 +339,7 @@ function App() {
         ),
       },
     ],
-    [lang]
+    [t]
   );
 
   return (
@@ -350,8 +350,9 @@ function App() {
             <img
               src={icon}
               alt="Maçonnerie Grand-Duc logo"
-              width={46}
-              height={46}
+              width={40}
+              height={50}
+              style={{ objectFit: "cover" }}
             />
             Maçonnerie Grand-Duc
           </a>
@@ -390,7 +391,7 @@ function App() {
               <img
                 src={icon}
                 alt="Maçonnerie Grand-Duc crest"
-                style={{ width: 300 }}
+                style={{ width: 300, objectFit: "cover" }}
               />
             </div>
           </div>
@@ -541,7 +542,11 @@ function App() {
       <footer>
         <div className="footer-inner">
           <div className="footer-brand">
-            <img src={icon} alt="Maçonnerie Grand-Duc logo" />
+            <img
+              src={icon}
+              alt="Maçonnerie Grand-Duc logo"
+              style={{ objectFit: "cover" }}
+            />
             <div>
               <div className="footer-brand-title">Maçonnerie Grand-Duc</div>
               <div>{t("footer.tagline")}</div>
